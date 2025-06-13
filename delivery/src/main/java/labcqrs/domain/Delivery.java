@@ -51,7 +51,12 @@ public class Delivery {
         repository().save(delivery);
 
         */
-
+        Delivery delivery = new Delivery();
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setQuantity(orderPlaced.getQty());
+        delivery.setCustomerId(orderPlaced.getCustomerId());
+        delivery.setOrderId(orderPlaced.getId());
+        repository().save(delivery);
         /** Example 2:  finding and process
         
 

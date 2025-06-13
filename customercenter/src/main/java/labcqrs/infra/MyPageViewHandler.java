@@ -28,7 +28,7 @@ public class MyPageViewHandler {
             MyPage myPage = new MyPage();
             // view 객체에 이벤트의 Value 를 set 함
             myPage.setProductId(orderPlaced.getProductId());
-            myPage.setOrderStatus('주문됨');
+            myPage.setOrderStatus("주문됨");
             myPage.setOrderId(String.valueOf(orderPlaced.getId()));
             // view 레파지 토리에 save
             myPageRepository.save(myPage);
@@ -48,7 +48,7 @@ public class MyPageViewHandler {
                 List<MyPage> myPageList = myPageRepository.findByOrderId(String.valueOf(deliveryStarted.getOrderId()));
                 for(MyPage myPage : myPageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    myPage.setDeliveryStatus('배송됨');
+                    myPage.setDeliveryStatus("배송됨");
                 // view 레파지 토리에 save
                 myPageRepository.save(myPage);
                 }
@@ -66,7 +66,7 @@ public class MyPageViewHandler {
                 List<MyPage> myPageList = myPageRepository.findByOrderId(String.valueOf(orderCancelled.getId()));
                 for(MyPage myPage : myPageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    myPage.setOrderStatus('주문취소됨');
+                    myPage.setOrderStatus("주문취소됨");
                 // view 레파지 토리에 save
                 myPageRepository.save(myPage);
                 }
